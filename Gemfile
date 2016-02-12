@@ -26,7 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'materialize-sass'  
 gem 'devise'        
 gem 'toastr-rails'
-
+gem 'dotenv-rails', :groups => [:development]
+gem 'mandrill-api'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
