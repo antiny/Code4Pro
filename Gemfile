@@ -28,6 +28,8 @@ gem 'devise'
 gem 'toastr-rails'
 gem 'dotenv-rails', :groups => [:development]
 gem 'mandrill-api'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
