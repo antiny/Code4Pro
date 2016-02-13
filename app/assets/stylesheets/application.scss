@@ -9,3 +9,21 @@ body {
 main {
   flex: 1 0 auto;
 }
+
+.btn-social {
+	width:300px;
+}
+	
+.or-divider {
+  border-top: 1px solid #e0e0e0;
+  color: #9e9e9e;
+  text-align: center;
+  margin: 2rem 0rem 0rem 0rem;
+
+  span {
+		position: relative;
+		top: -10px;
+		background: #ffffff;
+		padding: 0px 10px; 
+	}
+}
