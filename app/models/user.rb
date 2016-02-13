@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, :omniauth_providers => [:google_oauth2]
+         :omniauthable, :omniauth_providers => [:google_oauth2, :facebook]
 
   validates :name, presence: true, length: { maximum: 20 }
 
@@ -29,7 +29,31 @@ class User < ActiveRecord::Base
           email: data['email'], 
           provider: access_token.provider,
           uid: access_token.uid,
-          password: Devise.friendly_token[0, 20]
+          password: Devise.friendly_token[0, 20],
+          image: data['image']
+        )
+      end 
+    end
+  end 
+
+  def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
+    data = access_token.info
+    user = User.where(provider: access_token.provider, uid: access_token.uid).first
+    
+    if user
+      return user
+    else
+      registered_user = User.where(email: data['email']).first
+      if registered_user
+        return registered_user
+      else
+        user = User.create(
+          name: data.name,
+          email: data.email, 
+          provider: access_token.provider,
+          uid: access_token.uid,
+          password: Devise.friendly_token[0, 20],
+          image: data.image
         )
       end 
     end
