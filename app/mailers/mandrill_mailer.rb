@@ -1,6 +1,6 @@
 require 'mandrill'
 
-class MandrillMailler < ApplicationMailer
+class MandrillMailer < ApplicationMailer
 
 	def mandrill_client
 		@mandrill_client ||= Mandrill::API.new ENV["MANDRILL_API_KEY"]

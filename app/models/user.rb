@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   after_create :send_notification
 
   def send_notification
-  	MandrillMailler.new_user(self).deliver_later
+  	MandrillMailer.new_user(self).deliver_later
   end 
 
   def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
