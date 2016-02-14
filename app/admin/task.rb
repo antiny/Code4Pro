@@ -13,6 +13,22 @@ ActiveAdmin.register Task do
 #   permitted
 # end
 
-permit_params :title, :note, :header, :video, :tag, :project_id
+	permit_params :title, :note, :header, :video, :tag, :project_id
+	sortable tree: false, sorting_attribute: :tag
 
+	index :as => :sortable do
+		label :title
+
+		actions
+	end
+
+	index do 
+		selectable_column
+		column :header
+		column :title
+		column :tag
+		column :project
+
+		actions
+	end 
 end

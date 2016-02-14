@@ -10,9 +10,11 @@
 								<%= task.title %>
 							</div>
 						<% else %>
-							<%= link_to [task.project, task] do %>
-								<%= task.title %>
-							<% end %>
+							<div class="collection-item">
+								<%= link_to [task.project, task] do %>
+									<%= task.title %>
+								<% end %>
+							</div>	
 						<% end %>
 					<% end %>
 				</div>
