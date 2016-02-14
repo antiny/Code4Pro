@@ -7,5 +7,13 @@ class Task < ActiveRecord::Base
   validates :title, presence: true, length: { maximum: 50 }
   validates :video, presence: true
   validates :project, presence: true
+
+	def next
+		project.tasks.where("tag > ? AND header = ?", tag, false).order(:tag).first
+	end 
+
+	def prev
+		project.tasks.where("tag < ? AND header = ?", tag, false).order(:tag).last
+	end 
   
 end
