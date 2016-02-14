@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   get 'pages/about'
+  get '/my-projects' => 'project#list'
 
   post '/free' => 'charge#free'
 

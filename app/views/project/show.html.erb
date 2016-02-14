@@ -20,17 +20,15 @@
 				</div>
 			<% else %>
 				<div class="card-content center">
-					<%= image_tag avatar_url(current_user), class: "circle responsive-img" %><br/>
+					<%= image_tag avatar_url(current_user), class: "circle responsive-img avatar" %><br/>
 					<h5><%= current_user.name %></h5>
 				</div>
 				<div class="card-action center" style="overflow: hidden;">
 					<% @users.each do |u| %>
-						<div class="valign-wrapper left">
-							<span class="valign-wrapper left" style="margin-left: 1em">
-								<%= image_tag avatar_url(u), class: "circle responsive-img" %>&nbsp;
-								<%= u.name %>&nbsp;
-							</span>
-						</div>
+						<span class="valign-wrapper">
+							<%= image_tag avatar_url(u), class: "circle responsive-img avatar-small" %>&nbsp;
+							<%= u.name %>&nbsp;
+						</span><br/>
 					<% end %>
 				</div>	
 			<% end %>

@@ -1,4 +1,7 @@
 class ProjectController < ApplicationController
+
+  before_action :authenticate_user!, only: [ :list ]
+
   def index
   	@projects = Project.all
   end
@@ -15,4 +18,9 @@ class ProjectController < ApplicationController
 
   	@users = @project.users.first(10) || []
   end
+
+  def list
+    @projects = current_user.projects || []
+  end 
+
 end
