@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/my-projects' => 'project#list'
 
   post '/free' => 'charge#free'
+  post '/pay' => 'charge#pay'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
