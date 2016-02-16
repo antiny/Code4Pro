@@ -43,7 +43,11 @@
 			</div>
 			<div class="card-content grey-text text-darken-4">
 				<h5><%= @project.name %></h5>
-				<span><%= @project.average_rating %> <%= @reviews.count %> reviews </span>
+				<span id="average_rating"></span>
+				<a href="#reviews_section">
+					<p><%= pluralize(@reviews.count, 'review') %></p>
+				</a>
+				
 				<hr>
 				<%= @project.content %>
 
@@ -68,8 +72,16 @@
 			<div class="card-content">
 				<h4>Review</h4>
 				<div><%= render 'reviews/form' if @joined && !@has_review %></div>
-				<div><%= render 'reviews/index' %></div>
+				<div id="reviews_section"><%= render 'reviews/index' %></div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	$('#average_rating').raty({
+		path: '/assets',
+		readOnly: true,
+		score: <%= @project.average_rating %>
+	});
+</script>
