@@ -15,7 +15,6 @@
 							<% end %>
 						<% else %>	
 							<%= form_tag pay_path, id: 'chargeForm' do %>
-								<script src="https://checkout.stripe.com/checkout.js"></script>
 								<%= hidden_field_tag 'stripeToken' %>
 								<%= hidden_field_tag 'stripeEmail' %>
 								<%= hidden_field_tag 'project_id', @project.id %>
