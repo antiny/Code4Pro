@@ -10,7 +10,18 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
   <script src="https://checkout.stripe.com/checkout.js"></script>
   <script src="//load.sumome.com/" data-sumo-site-id="88fbf6fffc41a98c613a29722f059b4c079f898d1b34ee55874eba5aa9d9f141" async="async"></script>
-  <%= yield :head %>  
+  <%= yield :head %>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-24766257-2', 'auto');
+    ga('send', 'pageview');
+
+  </script>  
 </head>
 <body>
   <!-- Google Tag Manager -->
