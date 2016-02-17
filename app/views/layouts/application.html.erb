@@ -10,10 +10,18 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
   <script src="https://checkout.stripe.com/checkout.js"></script>
   <script src="//load.sumome.com/" data-sumo-site-id="88fbf6fffc41a98c613a29722f059b4c079f898d1b34ee55874eba5aa9d9f141" async="async"></script>
-  <%= yield :head %>
-  
+  <%= yield :head %>  
 </head>
 <body>
+  <!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WTXMFQ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WTXMFQ');</script>
+  <!-- End Google Tag Manager -->
 
 	<%= render 'shared/header'%>
 	<%= render 'shared/message'%>
