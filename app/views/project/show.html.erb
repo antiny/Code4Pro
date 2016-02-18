@@ -180,7 +180,7 @@
 
 <script type="text/javascript">
 	$('#average_rating').raty({
-		path: '/assets',
+		path: 'https://s3-ap-southeast-1.amazonaws.com/code4pro/stars/',
 		readOnly: true,
 		score: <%= @project.average_rating %>
 	});
