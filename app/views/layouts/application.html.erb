@@ -77,8 +77,13 @@
 	<%= render 'shared/footer'%>
            
 	<script type="text/javascript">
-		 $(".button-collapse").sideNav();
-		 $(".dropdown-button").dropdown();
+		$(".button-collapse").sideNav();
+		$(".dropdown-button").dropdown();
+
+    analytics.track('Clicked CTA', {
+      location: 'header',
+      type: 'button'
+    });
 	</script>
 
   <!-- Intercom 
