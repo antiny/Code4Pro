@@ -39,7 +39,6 @@ class MandrillMailer < ApplicationMailer
 			]
 		}
 
-		byebug
 		mandrill_client.messages.send_template template_name, template_content, message
 	end
 

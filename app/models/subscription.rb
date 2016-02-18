@@ -9,7 +9,6 @@ class Subscription < ActiveRecord::Base
   		@user = User.find_by_email(self.user.email)
   		@project = Project.find(self.project_id)
 
-  		byebug
   		MandrillMailer.new_receipt(@user, @project).deliver_now	
   	end 
 end
