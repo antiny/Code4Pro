@@ -84,6 +84,14 @@
       location: 'header',
       type: 'button'
     });
+
+    <% if current_user %>
+      analytics.identify('<%= current_user.id %>', {
+        name:   '<%= current_user.name %>',
+        email:  '<%= current_user.email %>',
+        avatar: '<%= current_user.image %>',
+      });
+    <% end %>
 	</script>
 
   <!-- Intercom 

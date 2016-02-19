@@ -29,7 +29,7 @@
 				<div class="card-action center">
 					<% if user_signed_in? %>
 						<% if @project.price == 0 %>
-							<%= form_tag free_path do %>
+							<%= form_tag free_path, id: 'chargeForm' do %>
 								<%= hidden_field_tag 'project_id', @project.id %>
 								<button type="submit" class="btn pink darken-2">Take this project</button>
 							<% end %>
@@ -188,5 +188,13 @@
 	$(document).ready(function(){
     $('ul.tabs').tabs();
   });
+
+	var form = document.getElementById('chargeForm');
+	analytics.trackForm(form, 'Subscribe', {
+	  plan: "<%= @project.price == 0 ? 'Free' : 'Paid' %>",
+	  course_name: '<%= @project.name %>',
+	  revenue: '<%= @project.price %>'
+	});
+
 </script>
 
